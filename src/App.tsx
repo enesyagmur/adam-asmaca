@@ -1,29 +1,19 @@
-import { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import words from "./wordList.json";
-import Keyboard from "./components/Keyboard";
-import Hangman from "./components/hangman/Hangman";
-import Guess from "./components/Guess";
+import Home from "./Pages/Home/Home";
+import Game from "./Pages/Game/Game";
 
 function App() {
-  const [randomWord, setRandomWord] = useState(() => {
-    return words[Math.floor(Math.random() * words.length)];
-  });
-  const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
-
-  console.log(wordToGuess);
-
   return (
-    <div className="w-full h-screen flex flex-col items-center bg-neutral-800 text-white p-0 lg:p-20">
-      <Hangman />
-      <Guess />
-      <Keyboard />
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Home />} path="/" />
+          <Route element={<Game />} path="/game" />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
 export default App;
-
-// guess te bulunan harfler ve çizgiler için genel class oluşturup hepsinde kullancağım
-
-// klavye tasarım
