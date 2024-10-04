@@ -9,3 +9,7 @@
 .guess-line {
   @apply w-[60px] h-[10px] bg-neutral-300;
 }
+
+.keyboard-button {
+  @apply w-[60px] h-[70px] font-bold bg-transparent border-2 text-neutral-300 border-neutral-300 text-center m-1 hover:bg-neutral-300 hover:text-neutral-800;
+}
