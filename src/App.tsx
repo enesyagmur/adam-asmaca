@@ -6,7 +6,7 @@ import Hangman from "./components/hangman/Hangman";
 import Guess from "./components/Guess";
 
 function App() {
-  const [wordToGuess, SetWordToGuess] = useState(() => {
+  const [randomWord, setRandomWord] = useState(() => {
     return words[Math.floor(Math.random() * words.length)];
   });
   const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
