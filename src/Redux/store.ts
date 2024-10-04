@@ -3,6 +3,8 @@ import wordSlice from "./wordSlice";
 
 export const store = configureStore({
   reducer: {
-    randomWord: wordSlice,
+    wordStore: wordSlice,
   },
 });
+
+export type stateRoot = ReturnType<typeof store.getState>;

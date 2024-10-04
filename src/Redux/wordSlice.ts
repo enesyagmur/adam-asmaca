@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export const wordSlice = createSlice({
-  name: "randomWord",
+  name: "wordSlice",
   initialState: {
-    word: "",
+    sipletedWord: [],
   },
   reducers: {
     updateWord: (state, action) => {
-      state.word = action.payload;
+      state.sipletedWord = action.payload;
     },
   },
 });
