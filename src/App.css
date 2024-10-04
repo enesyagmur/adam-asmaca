@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.guess-input {
+  @apply w-[60px] text-5xl font-bold bg-transparent text-neutral-300 text-center capitalize;
+}
+
+.guess-line {
+  @apply w-[60px] h-[10px] bg-neutral-300;
+}

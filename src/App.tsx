@@ -26,3 +26,7 @@ function App() {
 }
 
 export default App;
+
+// guess te bulunan harfler ve çizgiler için genel class oluşturup hepsinde kullancağım
+
+// klavye tasarım
