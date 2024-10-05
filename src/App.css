@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.guess-char {
+  @apply w-[60px] m-3 text-5xl font-bold bg-transparent text-neutral-300 text-center capitalize;
+}
+
+.guess-line {
+  @apply w-[60px] h-[10px] bg-neutral-300 m-3;
+}
+
+.keyboard-button {
+  @apply w-[60px] h-[70px] font-bold bg-transparent border-2 text-neutral-300 border-neutral-300 text-center m-1 hover:bg-neutral-300 hover:text-neutral-800;
+}
