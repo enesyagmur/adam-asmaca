@@ -17,3 +17,5 @@ function App() {
 }
 
 export default App;
+
+//keyborda tıkladığım tuşları yakalayamıyorum
