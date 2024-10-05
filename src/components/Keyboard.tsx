@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import letters from "../data/letters.json";
+import { useDispatch, useSelector } from "react-redux";
+import { updateError } from "../Redux/errorSlice";
+import { stateRoot } from "../Redux/store";
 
 type KeyboardProps = {
   guess: string[];
@@ -12,39 +16,10 @@ const Keyboard: React.FC<KeyboardProps> = ({
   setGuess,
   splitedWord,
 }) => {
-  const letters: string[] = [
-    "a",
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "v",
-    "w",
-    "x",
-    "y",
-    "z",
-  ];
   const [guessCounter, setGuessCounter] = useState<number>(0);
-
+  const errorCount = useSelector((state: stateRoot) => state.errorStore.count);
   const [visibleKeyboard, setVisibleKeyboard] = useState<boolean>(false);
-
-  console.log("word:", splitedWord);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (
@@ -58,6 +33,15 @@ const Keyboard: React.FC<KeyboardProps> = ({
     }
   }, [guess]);
 
+  useEffect(() => {
+    if (errorCount === 5) {
+      setTimeout(() => {
+        setVisibleKeyboard(true);
+        alert("kaybettin");
+      }, 100);
+    }
+  }, [errorCount]);
+
   const charGuessFunc = (char: string) => {
     if (char === splitedWord[guessCounter]) {
       setGuess((prevGuess) => {
@@ -65,16 +49,17 @@ const Keyboard: React.FC<KeyboardProps> = ({
         newGuess[guessCounter] = char;
         return newGuess;
       });
-
       setGuessCounter((prevCounter) => prevCounter + 1);
+    } else {
+      dispatch(updateError());
     }
   };
 
   return visibleKeyboard ? null : (
-    <div className="w-8/12 flex flex-wrap justify-center mt-10 ">
+    <div className="w-8/12 flex flex-wrap justify-center mt-10">
       {letters.map((letter) => (
         <button
-          className="keyboard-button "
+          className="keyboard-button"
           key={uuidv4()}
           onClick={() => charGuessFunc(letter)}
         >
