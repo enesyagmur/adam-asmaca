@@ -13,3 +13,7 @@
 .keyboard-button {
   @apply w-[60px] h-[70px] font-bold capitalize bg-transparent border-2 text-neutral-300 border-neutral-300 text-center m-1 hover:bg-neutral-300 hover:text-neutral-800;
 }
+
+.home-mode-button {
+  @apply w-3/12 h-full flex flex-col items-center justify-center border-2 border-neutral-300 rounded-xl hover:bg-neutral-300 hover:text-neutral-800 cursor-pointer;
+}
