@@ -56,16 +56,18 @@ const Keyboard: React.FC<KeyboardProps> = ({
   };
 
   return visibleKeyboard ? null : (
-    <div className="w-8/12 flex flex-wrap justify-center mt-10">
-      {letters.map((letter) => (
-        <button
-          className="keyboard-button"
-          key={uuidv4()}
-          onClick={() => charGuessFunc(letter)}
-        >
-          {letter}
-        </button>
-      ))}
+    <div className=" md:w-[250px] lg:w-[400px] xl:w-[530px] h-[500px] flex justify-center items-center bg-white rounded-xl ">
+      <div className="md:w-11/12 lg:w-10/12 xl:w-8/12 md:h-5/6 lg:h-4/6 xl:h-4/6 flex flex-wrap justify-center items-center">
+        {letters.map((letter) => (
+          <button
+            className="keyboard-button"
+            key={uuidv4()}
+            onClick={() => charGuessFunc(letter)}
+          >
+            {letter}
+          </button>
+        ))}
+      </div>
     </div>
   );
 };

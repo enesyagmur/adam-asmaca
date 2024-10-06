@@ -3,17 +3,17 @@
 @tailwind utilities;
 
 .guess-char {
-  @apply w-[60px] m-3 text-5xl font-bold bg-transparent text-neutral-300 text-center capitalize;
+  @apply w-[60px] m-3 text-5xl font-bold bg-transparent text-black text-center capitalize;
 }
 
 .guess-line {
-  @apply w-[60px] h-[10px] bg-neutral-300 m-3;
+  @apply w-[60px] h-[5px] bg-neutral-500 m-3;
 }
 
 .keyboard-button {
-  @apply w-[60px] h-[70px] font-bold capitalize bg-transparent border-2 text-neutral-300 border-neutral-300 text-center m-1 hover:bg-neutral-300 hover:text-neutral-800;
+  @apply md:w-[30px] lg:w-[40px] xl:w-[50px] md:h-[40px] lg:h-[50px] xl:h-[60px] font-bold capitalize bg-transparent border-2 text-black border-neutral-500 rounded-md text-center m-1 hover:bg-black hover:text-white;
 }
 
 .home-mode-button {
-  @apply w-3/12 h-full flex flex-col items-center justify-center border-2 border-neutral-300 rounded-xl hover:bg-neutral-300 hover:text-neutral-800 cursor-pointer;
+  @apply w-3/12 h-full flex flex-col bg-white items-center justify-center border-2 border-blue-400 text-black rounded-xl hover:bg-neutral-300 hover:text-neutral-800 cursor-pointer;
 }

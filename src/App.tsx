@@ -18,4 +18,6 @@ function App() {
 
 export default App;
 
-//keyborda tıkladığım tuşları yakalayamıyorum
+//tasarım değişikliği yapıyorum
+// ana menu ve oyun için müzik eklemeyi düşünüyorum
+// kelime oluşturmayı yapay zeka ile birden fazla dilde yapmayı düşünüyorum
