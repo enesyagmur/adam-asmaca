@@ -56,8 +56,8 @@ const Keyboard: React.FC<KeyboardProps> = ({
   };
 
   return visibleKeyboard ? null : (
-    <div className=" md:w-[250px] lg:w-[400px] xl:w-[530px] h-[500px] flex justify-center items-center bg-white rounded-xl ">
-      <div className="md:w-11/12 lg:w-10/12 xl:w-8/12 md:h-5/6 lg:h-4/6 xl:h-4/6 flex flex-wrap justify-center items-center">
+    <div className="w-[350px] md:w-[250px] lg:w-[400px] xl:w-[530px] h-[120px]  md:h-[500px] mt-2 flex justify-center items-center bg-white rounded-xl z-50">
+      <div className="w-full md:w-11/12 lg:w-10/12 xl:w-8/12 h-full md:h-3/6 lg:h-4/6 xl:h-4/6 flex flex-wrap justify-center items-center">
         {letters.map((letter) => (
           <button
             className="keyboard-button"

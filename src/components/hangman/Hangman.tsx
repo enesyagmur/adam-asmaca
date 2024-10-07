@@ -9,7 +9,7 @@ import { stateRoot } from "../../Redux/store";
 const Hangman = () => {
   const errorCount = useSelector((state: stateRoot) => state.errorStore.count);
   return (
-    <div className="w-[200px] h-[500px] relative rounded-xl right-[75px] top-[90px]">
+    <div className="w-[200px] md:w-[200px] h-[300px] relative rounded-xl right-[50px] text-blue-400   md:right-[102px] top-[5px] ">
       {errorCount > 0 ? <Head /> : null}
       {errorCount > 1 ? <Neck /> : null}
       {errorCount > 2 ? <Arm /> : null}
