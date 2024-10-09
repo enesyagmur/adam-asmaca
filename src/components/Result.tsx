@@ -2,12 +2,15 @@ import { useSelector } from "react-redux";
 import { stateRoot } from "../Redux/store";
 import { AiFillHome } from "react-icons/ai";
 import { FaRepeat } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
 const Result = () => {
   const result = useSelector((state: stateRoot) => state.resultStore.result);
   const splitedWord = useSelector(
     (state: stateRoot) => state.wordStore.splitedWord
   );
+
+  const navigate = useNavigate();
 
   if (result === true) {
     return (
@@ -16,14 +19,17 @@ const Result = () => {
           You Won
         </p>
         <div className="w-full h-2/6 flex items-center justify-center pt-6">
-          <p>Word Is|</p>
+          <p>Word Is |</p>
           <p className="text-xl font-bold uppercase ml-1">
             {splitedWord.join("")}
           </p>
         </div>
         <div className="w-7/12 md:w-4/12 h-2/6 flex items-center justify-evenly  text-6xl">
           <FaRepeat className="cursor-pointer hover:text-white" />
-          <AiFillHome className="cursor-pointer hover:text-white" />
+          <AiFillHome
+            className="cursor-pointer hover:text-white"
+            onClick={() => navigate("/")}
+          />
         </div>
       </div>
     );
@@ -41,7 +47,10 @@ const Result = () => {
         </div>
         <div className="w-7/12 md:w-4/12 h-2/6 flex items-center justify-evenly  text-6xl">
           <FaRepeat className="cursor-pointer hover:text-white" />
-          <AiFillHome className="cursor-pointer hover:text-white" />
+          <AiFillHome
+            className="cursor-pointer hover:text-white"
+            onClick={() => navigate("/")}
+          />
         </div>
       </div>
     );

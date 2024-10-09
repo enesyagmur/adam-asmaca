@@ -1,9 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import easyWords from "../../data/easyWords.json";
-import normalWords from "../../data/normalWords.json";
-import hardWords from "../../data/hardWords.json";
 import { useDispatch } from "react-redux";
-import { updateWord } from "../../Redux/wordSlice";
+import { createNewRandomWord } from "../../Redux/wordSlice";
 import { useState } from "react";
 import bgImage from "../../assets/bg2.jpg";
 
@@ -12,27 +9,14 @@ const Home = () => {
   const dispatch = useDispatch();
   const [mode, setMode] = useState<boolean[]>([false, false, false]);
 
-  const createRandomWord = () => {
-    if (mode[0] === true) {
-      const word: string =
-        easyWords[Math.floor(Math.random() * easyWords.length)];
-      const splitedWord: string[] = word.split("");
-      return splitedWord;
-    } else if (mode[1] === true) {
-      const word: string =
-        normalWords[Math.floor(Math.random() * normalWords.length)];
-      const splitedWord: string[] = word.split("");
-      return splitedWord;
-    } else if (mode[2] === true) {
-      const word: string =
-        hardWords[Math.floor(Math.random() * hardWords.length)];
-      const splitedWord: string[] = word.split("");
-      return splitedWord;
-    }
-  };
-
   const startGame = async () => {
-    await dispatch(updateWord(createRandomWord()));
+    if (mode[0] === true) {
+      await dispatch(createNewRandomWord("easy"));
+    } else if (mode[1] === true) {
+      await dispatch(createNewRandomWord("normal"));
+    } else if (mode[2] === true) {
+      await dispatch(createNewRandomWord("hard"));
+    }
     navigate("/game");
   };
 
