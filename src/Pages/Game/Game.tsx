@@ -26,7 +26,7 @@ const Game = () => {
         backgroundSize: "cover",
         backgroundRepeat: "repeat",
       }}
-      className="w-full md:h-screen flex flex-col-reverse md:flex-col items-center  text-black lg:p-10"
+      className="w-full md:h-screen flex flex-col-reverse md:flex-col items-center  text-black lg:p-10 relative"
     >
       <div className="w-full lg:w-12/12  xl:w-11/12  h-[655px] md:h-[500px] flex md:flex-row md:mt-10 lg:mt-0 flex-col-reverse items-center justify-evenly">
         <Keyboard guess={guess} setGuess={setGuess} splitedWord={splitedWord} />

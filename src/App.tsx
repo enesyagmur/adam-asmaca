@@ -18,10 +18,11 @@ function App() {
 
 export default App;
 
-//tasarım değişikliği yapıyorum
-// ana menu ve oyun için müzik eklemeyi düşünüyorum
-// kelime oluşturmayı yapay zeka ile birden fazla dilde yapmayı düşünüyorum
+//DURUM:
+//muzik başlarken çalıyor ama durduramıyorum
 
+//YAPILACAKLAR:
+// kelime oluşturmayı yapay zeka ile birden fazla dilde yapmayı düşünüyorum
 /* her hatalı tuşlamada kafanın üstünde 2-3 saniyelik mesaj kutusu ile yardım isteyebilir ve 
 yine her hatada yüz ikonu değişip düzelebilir
 */
