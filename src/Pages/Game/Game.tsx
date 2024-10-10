@@ -55,7 +55,7 @@ const Game = () => {
         }}
         className="w-full h-screen flex items-center justify-center"
       >
-        <Result />
+        <Result setGuess={setGuess} />
       </div>
     );
   }

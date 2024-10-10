@@ -9,9 +9,12 @@ export const errorSlice = createSlice({
     updateError: (state) => {
       state.count = state.count + 1;
     },
+    resetError: (state) => {
+      state.count = 0;
+    },
   },
 });
 
-export const { updateError } = errorSlice.actions;
+export const { updateError, resetError } = errorSlice.actions;
 
 export default errorSlice.reducer;
