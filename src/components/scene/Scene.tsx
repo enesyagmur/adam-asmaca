@@ -8,6 +8,7 @@ const Scene = () => {
       <Player />
       <Bar />
       <Hangman />
+      <div className="w-full h-[70px] md:h-[110px] bottom-0 bg-neutral-600 absolute right-[0px] rounded-xl"></div>
     </div>
   );
 };

@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./Pages/Home/Home";
 import Game from "./Pages/Game/Game";
+import NotFound from "./Pages/NotFound/NotFound";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Routes>
           <Route element={<Home />} path="/" />
           <Route element={<Game />} path="/game" />
+          <Route element={<NotFound />} path="*" />
         </Routes>
       </BrowserRouter>
     </>
@@ -19,7 +21,6 @@ function App() {
 export default App;
 
 //DURUM:
-//bar ın ucunu halka gibi yapıp boyna takabilirim
 
 //YAPILACAKLAR:
 // kelime oluşturmayı yapay zeka ile birden fazla dilde yapmayı düşünüyorum

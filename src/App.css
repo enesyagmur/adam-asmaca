@@ -19,10 +19,10 @@
 }
 
 .hangman-message-cloud {
-  @apply w-28 h-24 border-2 border-neutral-400 rounded-xl absolute mb-20 ml-40 px-2;
+  @apply w-28 h-24 border-2 border-neutral-400 rounded-xl absolute mb-20 ml-44 px-2;
 }
 .hangman-message-text {
-  @apply text-neutral-400 w-full h-full flex items-center justify-center text-center;
+  @apply text-neutral-600 w-full h-full flex items-center justify-center text-center;
 }
 
 .hangman-head {

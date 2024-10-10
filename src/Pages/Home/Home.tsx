@@ -79,7 +79,11 @@ const Home = () => {
         </div>
         <button
           onClick={startGame}
-          className="w-10/12 md:w-[200px] h-[60px] md:h-[50px] capitalize font-bold rounded-xl text-black bg-neutral-400   text-center m-1 md:mt-10 hover:bg-blue-400 hover:text-white"
+          className={`w-10/12 md:w-[200px] h-[60px] md:h-[50px] capitalize font-bold rounded-xl text-black ${
+            mode[0] === true || mode[1] === true || mode[2] === true
+              ? "bg-blue-400 text-white cursor-pointer"
+              : "bg-neutral-400 cursor-no-drop "
+          } text-center m-1 md:mt-10 `}
         >
           Start
         </button>
