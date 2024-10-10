@@ -20,7 +20,7 @@ const Head = () => {
 
   if (errorCount === 1) {
     return (
-      <div className="w-full h-[50px] flex justify-center items-center absolute top-[40px] m-auto ">
+      <div className="hangman-head ">
         <FaFaceSmile className="w-[50px] h-[50px] " />
         {messageBox && (
           <div className="hangman-message-cloud">
@@ -33,7 +33,7 @@ const Head = () => {
     );
   } else if (errorCount === 2) {
     return (
-      <div className="w-full h-[50px] flex justify-center items-center absolute top-[40px] m-auto ">
+      <div className="hangman-head ">
         <FaFaceMeh className="w-[50px] h-[50px] " />
         {messageBox && (
           <div className="hangman-message-cloud">
@@ -46,7 +46,7 @@ const Head = () => {
     );
   } else if (errorCount === 3) {
     return (
-      <div className="w-full h-[50px] flex justify-center items-center absolute top-[40px] m-auto ">
+      <div className="hangman-head ">
         <FaFaceFrown className="w-[50px] h-[50px] " />
         {messageBox && (
           <div className="hangman-message-cloud">
@@ -57,7 +57,7 @@ const Head = () => {
     );
   } else if (errorCount === 4) {
     return (
-      <div className="w-full h-[50px] flex justify-center items-center absolute top-[40px] m-auto ">
+      <div className="hangman-head ">
         <FaFaceFrownOpen className="w-[50px] h-[50px] " />
         {messageBox && (
           <div className="hangman-message-cloud">
@@ -68,7 +68,7 @@ const Head = () => {
     );
   } else if (errorCount === 5) {
     return (
-      <div className="w-full h-[50px] flex justify-center items-center absolute top-[40px] m-auto ">
+      <div className="hangman-head ">
         <FaFaceDizzy className="w-[50px] h-[50px] " />
         {messageBox && (
           <div className="hangman-message-cloud">

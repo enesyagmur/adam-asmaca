@@ -19,10 +19,8 @@ function App() {
 export default App;
 
 //DURUM:
+//bar ın ucunu halka gibi yapıp boyna takabilirim
 
 //YAPILACAKLAR:
 // kelime oluşturmayı yapay zeka ile birden fazla dilde yapmayı düşünüyorum
-/* her hatalı tuşlamada kafanın üstünde 2-3 saniyelik mesaj kutusu ile yardım isteyebilir ve 
-yine her hatada yüz ikonu değişip düzelebilir
-*/
-//bar ın ucunu halka gibi yapıp boyna takabilirim
+// notfound ekranı

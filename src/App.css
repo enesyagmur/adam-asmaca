@@ -24,3 +24,7 @@
 .hangman-message-text {
   @apply text-neutral-400 w-full h-full flex items-center justify-center text-center;
 }
+
+.hangman-head {
+  @apply w-full h-[50px] bg-white flex justify-center items-center absolute top-[40px] m-auto z-40;
+}

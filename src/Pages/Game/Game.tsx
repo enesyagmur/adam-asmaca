@@ -2,18 +2,18 @@ import Guess from "../../components/Guess";
 import Keyboard from "../../components/Keyboard";
 import { useSelector } from "react-redux";
 import { stateRoot } from "../../Redux/store";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import bgImage from "../../assets/bg2.jpg";
 import Scene from "../../components/scene/Scene";
 import Result from "../../components/Result";
+import { useNavigate } from "react-router-dom";
 
 const Game = () => {
+  const navigate = useNavigate();
   const splitedWord = useSelector(
     (state: stateRoot) => state.wordStore.splitedWord
   );
-
   const result = useSelector((state: stateRoot) => state.resultStore.result);
-
   const [guess, setGuess] = useState<string[]>(() => {
     const initialArray: string[] = [];
     for (let i = 0; i < splitedWord.length; i++) {
@@ -24,7 +24,13 @@ const Game = () => {
 
   console.log(splitedWord);
 
-  if (result === null) {
+  useEffect(() => {
+    if (splitedWord.length <= 0) {
+      navigate("/");
+    }
+  }, []);
+
+  if (result === null && splitedWord.length > 0) {
     return (
       <div
         style={{
