@@ -19,8 +19,6 @@ function App() {
 export default App;
 
 //DURUM:
-//gues i sıfırlama yapıcam restart dediğinde
-//yeniden oyna butonunun işlevini ayarlamalıyım
 
 //YAPILACAKLAR:
 // kelime oluşturmayı yapay zeka ile birden fazla dilde yapmayı düşünüyorum

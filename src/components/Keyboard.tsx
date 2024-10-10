@@ -28,7 +28,7 @@ const Keyboard: React.FC<KeyboardProps> = ({
     ) {
       setTimeout(() => {
         dispatch(updateResult(true));
-      }, 100);
+      }, 1000);
     }
   }, [guess]);
 
@@ -36,7 +36,7 @@ const Keyboard: React.FC<KeyboardProps> = ({
     if (errorCount === 5) {
       setTimeout(() => {
         dispatch(updateResult(false));
-      }, 100);
+      }, 1000);
     }
   }, [errorCount]);
 

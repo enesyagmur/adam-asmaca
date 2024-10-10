@@ -17,3 +17,10 @@
 .home-mode-button {
   @apply w-10/12 md:w-3/12 h-1/5 md:h-full flex flex-col items-center justify-center border-2 border-blue-400  rounded-xl hover:bg-blue-400 hover:text-white cursor-pointer;
 }
+
+.hangman-message-cloud {
+  @apply w-28 h-24 border-2 border-neutral-400 rounded-xl absolute mb-20 ml-40 px-2;
+}
+.hangman-message-text {
+  @apply text-neutral-400 w-full h-full flex items-center justify-center text-center;
+}

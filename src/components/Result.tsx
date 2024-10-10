@@ -46,7 +46,7 @@ const Result: React.FC<ResultProps> = ({ setGuess }) => {
 
   if (result === true) {
     return (
-      <div className="w-10/12 sm:w-8/12 lg:w-6/12 h-4/6 sm:h-3/6 bg-blue-400 flex flex-col items-center justify-between text-black rounded-xl">
+      <div className="w-10/12 sm:w-8/12 lg:w-6/12 h-4/6 sm:h-3/6 bg-white flex flex-col items-center justify-between text-black rounded-xl">
         <div className="w-full h-2/6 bg-green-500 relative text-4xl font-bold uppercase flex items-center justify-center rounded-t-xl">
           <p className="">You Won</p>
           <FaFaceSmile className="absolute left-[90%]" />
@@ -59,9 +59,9 @@ const Result: React.FC<ResultProps> = ({ setGuess }) => {
           </p>
         </div>
         <div className="w-7/12 md:w-4/12 h-2/6 flex items-center justify-evenly  text-6xl">
-          <FaRepeat className="cursor-pointer hover:text-white" />
+          <FaRepeat className="cursor-pointer hover:text-neutral-400" />
           <AiFillHome
-            className="cursor-pointer hover:text-white"
+            className="cursor-pointer hover:text-neutral-400"
             onClick={goHome}
           />
         </div>
@@ -69,7 +69,7 @@ const Result: React.FC<ResultProps> = ({ setGuess }) => {
     );
   } else if (result === false) {
     return (
-      <div className="w-10/12 sm:w-8/12 lg:w-6/12 h-4/6 sm:h-3/6 bg-neutral-400 flex flex-col items-center justify-between text-black rounded-xl">
+      <div className="w-10/12 sm:w-8/12 lg:w-6/12 h-4/6 sm:h-3/6 bg-white flex flex-col items-center justify-between text-black rounded-xl">
         <div className="w-full h-2/6 bg-red-500 text-4xl font-bold uppercase flex items-center justify-center rounded-t-xl relative">
           <p className="">You Lose</p>
           <FaFaceDizzy className="absolute left-[90%]" />
@@ -82,11 +82,11 @@ const Result: React.FC<ResultProps> = ({ setGuess }) => {
         </div>
         <div className="w-7/12 md:w-4/12 h-2/6 flex items-center justify-evenly  text-6xl">
           <FaRepeat
-            className="cursor-pointer hover:text-white"
+            className="cursor-pointer hover:text-neutral-400"
             onClick={restartGame}
           />
           <AiFillHome
-            className="cursor-pointer hover:text-white"
+            className="cursor-pointer hover:text-neutral-400"
             onClick={goHome}
           />
         </div>
