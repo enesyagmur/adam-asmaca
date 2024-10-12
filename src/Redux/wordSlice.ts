@@ -1,7 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import easyWords from "../data/easyWords.json";
-import normalWords from "../data/normalWords.json";
-import hardWords from "../data/hardWords.json";
+import easyWords from "../data/words/enWords/easyWords.json";
+import mediumWords from "../data/words/enWords/mediumWords.json";
+import hardWords from "../data/words/enWords/hardWords.json";
+import kolayKelimeler from "../data/words/trWords/kolayKelimeler.json";
+import ortaKelimeler from "../data/words/trWords/ortaKelimeler.json";
+import zorKelimeler from "../data/words/trWords/zorKelimeler.json";
 
 export const wordSlice = createSlice({
   name: "wordSlice",
@@ -11,13 +14,18 @@ export const wordSlice = createSlice({
   reducers: {
     createNewRandomWord: (
       state,
-      action: { payload: "easy" | "normal" | "hard" }
+      action: {
+        payload: "easy" | "medium" | "hard" | "kolay" | "orta" | "zor";
+      }
     ) => {
       let newWordSplited: string[] = [];
       const wordArrays = {
         easy: easyWords,
-        normal: normalWords,
+        medium: mediumWords,
         hard: hardWords,
+        kolay: kolayKelimeler,
+        orta: ortaKelimeler,
+        zor: zorKelimeler,
       };
 
       const selectedArray = wordArrays[action.payload];

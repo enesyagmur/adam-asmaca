@@ -17,13 +17,24 @@ const Home = () => {
   );
 
   const startGame = async () => {
-    if (mode[0] === true) {
-      await dispatch(createNewRandomWord("easy"));
-    } else if (mode[1] === true) {
-      await dispatch(createNewRandomWord("normal"));
-    } else if (mode[2] === true) {
-      await dispatch(createNewRandomWord("hard"));
+    if (language === "en") {
+      if (mode[0] === true) {
+        await dispatch(createNewRandomWord("easy"));
+      } else if (mode[1] === true) {
+        await dispatch(createNewRandomWord("medium"));
+      } else if (mode[2] === true) {
+        await dispatch(createNewRandomWord("hard"));
+      }
+    } else if (language === "tr") {
+      if (mode[0] === true) {
+        await dispatch(createNewRandomWord("kolay"));
+      } else if (mode[1] === true) {
+        await dispatch(createNewRandomWord("orta"));
+      } else if (mode[2] === true) {
+        await dispatch(createNewRandomWord("zor"));
+      }
     }
+
     navigate("/game");
   };
 
