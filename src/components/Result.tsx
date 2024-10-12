@@ -8,6 +8,7 @@ import { updateResult } from "../Redux/resultSlice";
 import { FaFaceSmile } from "react-icons/fa6";
 import { FaFaceDizzy } from "react-icons/fa6";
 import { createNewRandomWord } from "../Redux/wordSlice";
+import text from "../data/languageText/textForResult.json";
 
 type ResultProps = {
   setGuess: React.Dispatch<React.SetStateAction<string[]>>;
@@ -17,6 +18,9 @@ const Result: React.FC<ResultProps> = ({ setGuess }) => {
   const result = useSelector((state: stateRoot) => state.resultStore.result);
   const splitedWord = useSelector(
     (state: stateRoot) => state.wordStore.splitedWord
+  );
+  const language = useSelector(
+    (state: stateRoot) => state.languageStore.language
   );
 
   const navigate = useNavigate();
@@ -29,15 +33,28 @@ const Result: React.FC<ResultProps> = ({ setGuess }) => {
   };
 
   const restartGame = () => {
-    if (splitedWord.length === 4) {
-      dispatch(createNewRandomWord("easy"));
-      setGuess(["", "", "", ""]);
-    } else if (splitedWord.length === 5) {
-      dispatch(createNewRandomWord("normal"));
-      setGuess(["", "", "", "", ""]);
-    } else if (splitedWord.length === 6) {
-      dispatch(createNewRandomWord("hard"));
-      setGuess(["", "", "", "", "", ""]);
+    if (language === "en") {
+      if (splitedWord.length === 4) {
+        dispatch(createNewRandomWord("easy"));
+        setGuess(["", "", "", ""]);
+      } else if (splitedWord.length === 5) {
+        dispatch(createNewRandomWord("medium"));
+        setGuess(["", "", "", "", ""]);
+      } else if (splitedWord.length === 6) {
+        dispatch(createNewRandomWord("hard"));
+        setGuess(["", "", "", "", "", ""]);
+      }
+    } else if (language === "tr") {
+      if (splitedWord.length === 4) {
+        dispatch(createNewRandomWord("kolay"));
+        setGuess(["", "", "", ""]);
+      } else if (splitedWord.length === 5) {
+        dispatch(createNewRandomWord("orta"));
+        setGuess(["", "", "", "", ""]);
+      } else if (splitedWord.length === 6) {
+        dispatch(createNewRandomWord("zor"));
+        setGuess(["", "", "", "", "", ""]);
+      }
     }
 
     dispatch(resetError());
@@ -48,12 +65,14 @@ const Result: React.FC<ResultProps> = ({ setGuess }) => {
     return (
       <div className="w-10/12 sm:w-8/12 lg:w-6/12 h-4/6 sm:h-3/6 bg-white flex flex-col items-center justify-between text-black rounded-xl">
         <div className="w-full h-2/6 bg-green-500 relative text-4xl font-bold uppercase flex items-center justify-center rounded-t-xl">
-          <p className="">You Won</p>
+          <p className="">
+            {language === "en" ? text.titleWon.en : text.titleWon.tr}
+          </p>
           <FaFaceSmile className="absolute left-[90%]" />
         </div>
 
         <div className="w-full h-2/6 flex items-center justify-center pt-6">
-          <p>Word Is |</p>
+          <p> {language === "en" ? text.wordInfo.en : text.wordInfo.tr}|</p>
           <p className="text-xl font-bold uppercase ml-1">
             {splitedWord.join("")}
           </p>
@@ -71,11 +90,13 @@ const Result: React.FC<ResultProps> = ({ setGuess }) => {
     return (
       <div className="w-10/12 sm:w-8/12 lg:w-6/12 h-4/6 sm:h-3/6 bg-white flex flex-col items-center justify-between text-black rounded-xl">
         <div className="w-full h-2/6 bg-red-500 text-4xl font-bold uppercase flex items-center justify-center rounded-t-xl relative">
-          <p className="">You Lose</p>
+          <p className="">
+            {language === "en" ? text.titleLose.en : text.titleLose.tr}
+          </p>
           <FaFaceDizzy className="absolute left-[90%]" />
         </div>
         <div className="w-full h-2/6 flex items-center justify-center pt-6">
-          <p>True Word |</p>
+          <p>{language === "en" ? text.wordInfo.en : text.wordInfo.tr} |</p>
           <p className="text-xl font-bold uppercase ml-1">
             {splitedWord.join("")}
           </p>

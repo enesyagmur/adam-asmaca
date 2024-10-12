@@ -1,0 +1,6 @@
+{
+  "titleWon": { "en": "You Won", "tr": "Kazandınız" },
+  "titleLose": { "en": "You Lose", "tr": "Kaybettiniz" },
+
+  "wordInfo": { "en": "Word Is", "tr": "Doğru Kelime" }
+}

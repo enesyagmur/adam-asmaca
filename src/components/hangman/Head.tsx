@@ -6,10 +6,14 @@ import { FaFaceFrown } from "react-icons/fa6";
 import { FaFaceFrownOpen } from "react-icons/fa6";
 import { FaFaceDizzy } from "react-icons/fa6";
 import { useEffect, useState } from "react";
+import text from "../../data/languageText/textForHead.json";
 
 const Head = () => {
   const errorCount = useSelector((state: stateRoot) => state.errorStore.count);
   const [messageBox, setMessageBox] = useState<boolean>(true);
+  const language = useSelector(
+    (state: stateRoot) => state.languageStore.language
+  );
 
   useEffect(() => {
     setMessageBox(true);
@@ -25,7 +29,7 @@ const Head = () => {
         {messageBox && (
           <div className="hangman-message-cloud">
             <p className="hangman-message-text">
-              i see, we have made our first mistake
+              {language === "en" ? text.error1.en : text.error1.tr}
             </p>
           </div>
         )}
@@ -38,7 +42,7 @@ const Head = () => {
         {messageBox && (
           <div className="hangman-message-cloud">
             <p className="hangman-message-text">
-              okay, everyone deserves 3 chances
+              {language === "en" ? text.error2.en : text.error2.tr}
             </p>
           </div>
         )}
@@ -50,7 +54,10 @@ const Head = () => {
         <FaFaceFrown className="w-[50px] h-[50px] " />
         {messageBox && (
           <div className="hangman-message-cloud">
-            <p className="hangman-message-text">i am starting to worry</p>
+            <p className="hangman-message-text">
+              {" "}
+              {language === "en" ? text.error3.en : text.error3.tr}
+            </p>
           </div>
         )}
       </div>
@@ -61,7 +68,10 @@ const Head = () => {
         <FaFaceFrownOpen className="w-[50px] h-[50px] " />
         {messageBox && (
           <div className="hangman-message-cloud">
-            <p className="hangman-message-text">please, I dont want to die</p>
+            <p className="hangman-message-text">
+              {" "}
+              {language === "en" ? text.error4.en : text.error4.tr}
+            </p>
           </div>
         )}
       </div>
@@ -72,7 +82,10 @@ const Head = () => {
         <FaFaceDizzy className="w-[50px] h-[50px] " />
         {messageBox && (
           <div className="hangman-message-cloud">
-            <p className="hangman-message-text">here, ignorance kills...</p>
+            <p className="hangman-message-text">
+              {" "}
+              {language === "en" ? text.error5.en : text.error5.tr}
+            </p>
           </div>
         )}
       </div>
