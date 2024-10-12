@@ -1,0 +1,8 @@
+{
+  "title": { "en": "hangman game", "tr": "adam asmaca" },
+  "button1Level": { "en": "easy", "tr": "kolay" },
+  "button2Level": { "en": "normal", "tr": "normal" },
+  "button3Level": { "en": "hard", "tr": "zor" },
+  "buttonInfo": { "en": "char", "tr": "karakter" },
+  "gameButton": { "en": "start", "tr": "başlat" }
+}

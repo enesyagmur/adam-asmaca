@@ -21,7 +21,14 @@ function App() {
 export default App;
 
 //DURUM:
+//
 
 //YAPILACAKLAR:
-// kelime oluşturmayı yapay zeka ile birden fazla dilde yapmayı düşünüyorum
-// notfound ekranı
+// projedeki tüm yazıları seçilen dile göre değiştirme
+//öncelikle ingilizce türkçe seçiminin yapılabileceği bir component yapacağım
+// mode butonlarını da ayrı bir componente ekleyeceğim
+// tr için ayrı harf json dosyası
+// tr için ayrı kelime dosyaları
+// ilk harf için ipucu butonu
+// proje için clean code ve performans düzenlemeleri
+// proje live alma video çekme ve linkedin post
