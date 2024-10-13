@@ -20,9 +20,6 @@ function App() {
 
 export default App;
 
-//DURUM:
-// ilk harf için ipucu butonu
-
 //YAPILACAKLAR:
-// proje için clean code ve performans düzenlemeleri
+// proje için clean code ve performans düzenlemeleri (game ve home yapıldı)
 // proje live alma video çekme ve linkedin post

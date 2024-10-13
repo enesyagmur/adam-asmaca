@@ -12,9 +12,15 @@ const NotFound = () => {
     (state: stateRoot) => state.languageStore.language
   );
 
+  const backgroundStyle = {
+    backgroundImage: `url(${bgImage})`,
+    backgroundSize: "object-cover",
+    backgroundRepeat: "repeat",
+  };
+
   return (
     <div
-      style={{ backgroundImage: `url(${bgImage})`, backgroundSize: "cover" }}
+      style={backgroundStyle}
       className="w-full h-screen flex items-center justify-center"
     >
       <div className="w-10/12 sm:w-8/12 lg:w-6/12 h-4/6 sm:h-3/6 bg-white flex flex-col items-center justify-between text-black rounded-xl">

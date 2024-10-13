@@ -11,7 +11,7 @@
 }
 
 .keyboard-button {
-  @apply w-[30px]  md:w-[30px] lg:w-[40px] xl:w-[50px] h-[30px]  md:h-[40px] lg:h-[50px] xl:h-[60px] font-bold capitalize bg-transparent border-[1px] md:border-2 text-blue-400 border-neutral-500 rounded-md text-center m-1 hover:bg-blue-400 hover:text-white;
+  @apply w-[25px]  md:w-[30px] lg:w-[40px] xl:w-[50px] h-[30px]  md:h-[40px] lg:h-[50px] xl:h-[60px] font-bold capitalize bg-transparent border-[1px] md:border-2 text-blue-400 border-neutral-200 md:border-neutral-300 rounded-md text-center m-1 hover:bg-blue-400 hover:text-white;
 }
 
 .home-mode-button {

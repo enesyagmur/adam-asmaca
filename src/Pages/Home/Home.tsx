@@ -48,9 +48,15 @@ const Home = () => {
     }
   };
 
+  const backgroundStyle = {
+    backgroundImage: `url(${bgImage})`,
+    backgroundSize: "object-cover",
+    backgroundRepeat: "repeat",
+  };
+
   return (
     <div
-      style={{ backgroundImage: `url(${bgImage})`, backgroundSize: "cover" }}
+      style={backgroundStyle}
       className="w-full h-screen flex flex-col items-center justify-center  text-blue-400 "
     >
       <div className="w-10/12 lg:w-6/12 h-5/6 lg:h-4/6 flex flex-col items-center justify-evenly relative bg-white text-black rounded-2xl">

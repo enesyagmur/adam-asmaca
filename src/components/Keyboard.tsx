@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { v4 as uuidv4 } from "uuid";
 import engLetters from "../data/letters/engLetters.json";
 import trLetters from "../data/letters/trLetters.json";
 
@@ -7,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateError } from "../Redux/errorSlice";
 import { stateRoot } from "../Redux/store";
 import { updateResult } from "../Redux/resultSlice";
+import Letters from "./Letters";
 
 type KeyboardProps = {
   guess: string[];
@@ -48,42 +48,33 @@ const Keyboard: React.FC<KeyboardProps> = ({
     }
   }, [errorCount]);
 
+  const handleError = () => {
+    dispatch(updateError());
+  };
+
+  const updateGuess = (char: string) => {
+    setGuess((prevGuess) => {
+      const newGuess = [...prevGuess];
+      newGuess[guessCounter] = char;
+      return newGuess;
+    });
+    setGuessCounter((prevCounter) => prevCounter + 1);
+  };
+
   const charGuessFunc = (char: string) => {
     if (char === splitedWord[guessCounter]) {
-      setGuess((prevGuess) => {
-        const newGuess = [...prevGuess];
-        newGuess[guessCounter] = char;
-        return newGuess;
-      });
-      setGuessCounter((prevCounter) => prevCounter + 1);
+      updateGuess(char);
     } else {
-      dispatch(updateError());
+      handleError();
     }
   };
 
   return (
     <div className="w-[350px] md:w-[250px] lg:w-[400px] xl:w-[530px] h-[120px]  md:h-[500px] mt-2 flex justify-center items-center bg-white rounded-xl z-50">
-      <div className="w-full md:w-11/12 lg:w-10/12 xl:w-8/12 h-full md:h-3/6 lg:h-4/6 xl:h-4/6 flex flex-wrap justify-center items-center">
-        {language === "en"
-          ? engLetters.map((letter) => (
-              <button
-                className="keyboard-button"
-                key={uuidv4()}
-                onClick={() => charGuessFunc(letter)}
-              >
-                {letter}
-              </button>
-            ))
-          : trLetters.map((letter) => (
-              <button
-                className="keyboard-button"
-                key={uuidv4()}
-                onClick={() => charGuessFunc(letter)}
-              >
-                {letter}
-              </button>
-            ))}
-      </div>
+      <Letters
+        letters={language === "en" ? engLetters : trLetters}
+        charGuessFunc={charGuessFunc}
+      />
     </div>
   );
 };
