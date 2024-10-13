@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import engLetters from "../data/letters/engLetters.json";
 import trLetters from "../data/letters/trLetters.json";
@@ -11,15 +11,18 @@ import { updateResult } from "../Redux/resultSlice";
 type KeyboardProps = {
   guess: string[];
   setGuess: React.Dispatch<React.SetStateAction<string[]>>;
+  guessCounter: number;
+  setGuessCounter: React.Dispatch<React.SetStateAction<number>>;
   splitedWord: string[];
 };
 
 const Keyboard: React.FC<KeyboardProps> = ({
   guess,
   setGuess,
+  guessCounter,
+  setGuessCounter,
   splitedWord,
 }) => {
-  const [guessCounter, setGuessCounter] = useState<number>(0);
   const errorCount = useSelector((state: stateRoot) => state.errorStore.count);
   const language = useSelector(
     (state: stateRoot) => state.languageStore.language

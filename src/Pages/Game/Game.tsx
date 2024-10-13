@@ -14,6 +14,8 @@ const Game = () => {
     (state: stateRoot) => state.wordStore.splitedWord
   );
   const result = useSelector((state: stateRoot) => state.resultStore.result);
+  const [guessCounter, setGuessCounter] = useState<number>(0);
+
   const [guess, setGuess] = useState<string[]>(() => {
     const initialArray: string[] = [];
     for (let i = 0; i < splitedWord.length; i++) {
@@ -23,6 +25,15 @@ const Game = () => {
   });
 
   console.log(splitedWord);
+
+  const helpButtonFunc = () => {
+    setGuess((prevGuess) => {
+      const newGuess = [...prevGuess];
+      newGuess[guessCounter] = splitedWord[guessCounter];
+      return newGuess;
+    });
+    setGuessCounter((prevCounter) => prevCounter + 1);
+  };
 
   useEffect(() => {
     if (splitedWord.length <= 0) {
@@ -44,11 +55,17 @@ const Game = () => {
           <Keyboard
             guess={guess}
             setGuess={setGuess}
+            guessCounter={guessCounter}
+            setGuessCounter={setGuessCounter}
             splitedWord={splitedWord}
           />
           <Scene />
         </div>
-        <Guess splitedWord={splitedWord} guess={guess} />
+        <Guess
+          splitedWord={splitedWord}
+          guess={guess}
+          helpButtonFunc={helpButtonFunc}
+        />
       </div>
     );
   } else if (result !== null) {
