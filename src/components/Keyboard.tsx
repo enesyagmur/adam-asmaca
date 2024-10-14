@@ -30,23 +30,19 @@ const Keyboard: React.FC<KeyboardProps> = ({
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (
-      guess.length === splitedWord.length &&
-      guess.every((value, index) => value === splitedWord[index])
-    ) {
-      setTimeout(() => {
+    if (guess.length === splitedWord.length) {
+      const isWin = guess.every((value, index) => value === splitedWord[index]);
+      if (isWin) {
         dispatch(updateResult(true));
-      }, 1000);
+      }
     }
-  }, [guess]);
+  }, [guess, dispatch, splitedWord]);
 
   useEffect(() => {
     if (errorCount === 5) {
-      setTimeout(() => {
-        dispatch(updateResult(false));
-      }, 1000);
+      dispatch(updateResult(false));
     }
-  }, [errorCount]);
+  }, [errorCount, dispatch]);
 
   const handleError = () => {
     dispatch(updateError());

@@ -33,33 +33,20 @@ const Result: React.FC<ResultProps> = ({ setGuess }) => {
   };
 
   const restartGame = () => {
-    if (language === "en") {
-      if (splitedWord.length === 4) {
-        dispatch(createNewRandomWord("easy"));
-        setGuess(["", "", "", ""]);
-      } else if (splitedWord.length === 5) {
-        dispatch(createNewRandomWord("medium"));
-        setGuess(["", "", "", "", ""]);
-      } else if (splitedWord.length === 6) {
-        dispatch(createNewRandomWord("hard"));
-        setGuess(["", "", "", "", "", ""]);
-      }
-    } else if (language === "tr") {
-      if (splitedWord.length === 4) {
-        dispatch(createNewRandomWord("kolay"));
-        setGuess(["", "", "", ""]);
-      } else if (splitedWord.length === 5) {
-        dispatch(createNewRandomWord("orta"));
-        setGuess(["", "", "", "", ""]);
-      } else if (splitedWord.length === 6) {
-        dispatch(createNewRandomWord("zor"));
-        setGuess(["", "", "", "", "", ""]);
-      }
-    }
+    const difficultyMap = {
+      en: ["easy", "medium", "hard"],
+      tr: ["kolay", "orta", "zor"],
+    };
 
-    dispatch(resetError());
-    dispatch(updateResult(null));
+    const length = splitedWord.length - 4;
+    const difficulty =
+      language === "en" ? difficultyMap.en[length] : difficultyMap.tr[length];
+    dispatch(createNewRandomWord(difficulty));
+    setGuess(Array(splitedWord.length));
   };
+
+  dispatch(resetError());
+  dispatch(updateResult(null));
 
   if (result === true) {
     return (
@@ -70,7 +57,6 @@ const Result: React.FC<ResultProps> = ({ setGuess }) => {
           </p>
           <FaFaceSmile className="absolute left-[90%]" />
         </div>
-
         <div className="w-full h-2/6 flex items-center justify-center pt-6">
           <p> {language === "en" ? text.wordInfo.en : text.wordInfo.tr}|</p>
           <p className="text-xl font-bold uppercase ml-1">
@@ -78,7 +64,10 @@ const Result: React.FC<ResultProps> = ({ setGuess }) => {
           </p>
         </div>
         <div className="w-7/12 md:w-4/12 h-2/6 flex items-center justify-evenly  text-6xl">
-          <FaRepeat className="cursor-pointer hover:text-neutral-400" />
+          <FaRepeat
+            className="cursor-pointer hover:text-neutral-400"
+            onClick={restartGame}
+          />
           <AiFillHome
             className="cursor-pointer hover:text-neutral-400"
             onClick={goHome}

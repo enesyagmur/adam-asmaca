@@ -12,12 +12,14 @@ export const wordSlice = createSlice({
     splitedWord: [] as string[],
   },
   reducers: {
-    createNewRandomWord: (
-      state,
-      action: {
-        payload: "easy" | "medium" | "hard" | "kolay" | "orta" | "zor";
-      }
-    ) => {
+    createNewRandomWord: (state, action) => {
+      type WordDifficulty =
+        | "easy"
+        | "medium"
+        | "hard"
+        | "kolay"
+        | "orta"
+        | "zor";
       let newWordSplited: string[] = [];
       const wordArrays = {
         easy: easyWords,
@@ -28,8 +30,8 @@ export const wordSlice = createSlice({
         zor: zorKelimeler,
       };
 
-      const selectedArray = wordArrays[action.payload];
-      if (selectedArray) {
+      if (action.payload in wordArrays) {
+        const selectedArray = wordArrays[action.payload as WordDifficulty];
         const newWord: string =
           selectedArray[Math.floor(Math.random() * selectedArray.length)];
         newWordSplited = newWord.split("");

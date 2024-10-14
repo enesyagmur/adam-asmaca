@@ -21,5 +21,6 @@ function App() {
 export default App;
 
 //YAPILACAKLAR:
-// proje için clean code ve performans düzenlemeleri (game ve home yapıldı)
+//result görüntülenmesinde ve restart işleminde hata var
+//body yi daha gerçekçi yapabilirim ve bar a çapraz tahta ekleyebilirim
 // proje live alma video çekme ve linkedin post
