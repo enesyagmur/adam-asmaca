@@ -4,7 +4,7 @@ import Bar from "./bar/Bar";
 
 const Scene = () => {
   return (
-    <div className="w-[350px] md:w-[550px] h-[500px] md:h-full mt-4 md:mt-1  flex justify-start items-center relative bg-white rounded-xl md:p-2">
+    <div className="w-[350px] md:w-[550px] h-[500px] md:h-full mt-4 md:mt-1 bg-white flex justify-start items-center relative  rounded-xl md:p-2">
       <Player />
       <Bar />
       <Hangman />
