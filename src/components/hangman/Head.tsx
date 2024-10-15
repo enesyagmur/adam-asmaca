@@ -24,8 +24,8 @@ const Head = () => {
 
   if (errorCount === 1) {
     return (
-      <div className="hangman-head ">
-        <FaFaceSmile className="w-[50px] h-[50px] " />
+      <>
+        <FaFaceSmile className="head-icon" />
         {messageBox && (
           <div className="hangman-message-cloud">
             <p className="hangman-message-text">
@@ -33,12 +33,13 @@ const Head = () => {
             </p>
           </div>
         )}
-      </div>
+      </>
     );
   } else if (errorCount === 2) {
     return (
-      <div className="hangman-head ">
-        <FaFaceMeh className="w-[50px] h-[50px] " />
+      <>
+        <FaFaceMeh className="head-icon" />
+
         {messageBox && (
           <div className="hangman-message-cloud">
             <p className="hangman-message-text">
@@ -46,12 +47,12 @@ const Head = () => {
             </p>
           </div>
         )}
-      </div>
+      </>
     );
   } else if (errorCount === 3) {
     return (
-      <div className="hangman-head ">
-        <FaFaceFrown className="w-[50px] h-[50px] " />
+      <>
+        <FaFaceFrown className="head-icon" />
         {messageBox && (
           <div className="hangman-message-cloud">
             <p className="hangman-message-text">
@@ -60,12 +61,12 @@ const Head = () => {
             </p>
           </div>
         )}
-      </div>
+      </>
     );
   } else if (errorCount === 4) {
     return (
-      <div className="hangman-head ">
-        <FaFaceFrownOpen className="w-[50px] h-[50px] " />
+      <>
+        <FaFaceFrownOpen className="head-icon" />
         {messageBox && (
           <div className="hangman-message-cloud">
             <p className="hangman-message-text">
@@ -74,12 +75,12 @@ const Head = () => {
             </p>
           </div>
         )}
-      </div>
+      </>
     );
   } else if (errorCount === 5) {
     return (
-      <div className="hangman-head ">
-        <FaFaceDizzy className="w-[50px] h-[50px] " />
+      <>
+        <FaFaceDizzy className="head-icon" />
         {messageBox && (
           <div className="hangman-message-cloud">
             <p className="hangman-message-text">
@@ -88,7 +89,7 @@ const Head = () => {
             </p>
           </div>
         )}
-      </div>
+      </>
     );
   }
 };

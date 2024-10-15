@@ -1,11 +1,8 @@
 const Arm = () => {
   return (
-    <div className="w-full h-[80px]  flex items-start justify-center absolute top-[113px]  pl-[10px]">
-      <div className="w-[10px] h-[60px] bg-blue-400 relative mb-[7%] transform rotate-45 left-[-5px]"></div>
-      <div className="w-[20px] h-[20px] bg-blue-400 rounded-full relative right-[-2px] top-[-5px]"></div>
-      <div className="w-[80px] h-[10px] bg-blue-400"></div>
-      <div className="w-[20px] h-[20px] bg-blue-400 rounded-full relative left-[-5px] top-[-5px]"></div>
-      <div className="w-[10px] h-[60px] bg-blue-400 transform rotate-[-45deg] ml-2 relative mb-[5%]"></div>
+    <div className="w-full h-[80px] pr-[38px] pl-[38px] md:pr-[50px] md:pl-[50px] flex items-start justify-between absolute top-[70px] md:top-[90px] z-30">
+      <div className="w-[20px] h-[90px] bg-blue-400 rounded-tl-xl rounded-b-lg"></div>
+      <div className="w-[20px] h-[90px] bg-blue-400 rounded-tr-xl rounded-b-lg"></div>
     </div>
   );
 };

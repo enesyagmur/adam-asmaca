@@ -25,6 +25,6 @@
   @apply text-neutral-600 w-full h-full flex items-center justify-center text-center;
 }
 
-.hangman-head {
-  @apply w-full h-[50px] bg-white flex justify-center items-center absolute top-[40px] m-auto z-40;
+.head-icon {
+  @apply text-6xl absolute top-[15px] md:top-[40px] left-[55px] md:left-[70px] z-50;
 }

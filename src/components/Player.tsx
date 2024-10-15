@@ -24,7 +24,7 @@ const Player = () => {
   };
 
   return (
-    <div className="w-[40px] h-[40px] absolute top-5 right-5 z-50 flex items-center justify-center bg-white text-blue-400   cursor-pointer rounded-full border-2 border-blue-400 hover:bg-blue-400 hover:text-white">
+    <div className="w-[30px] h-[30px] md:w-[40px] md:h-[40px]  absolute top-2 right-1 md:top-5 md:right-5 z-50 flex items-center justify-center bg-white text-blue-400   cursor-pointer rounded-full border-2 border-blue-400 hover:bg-blue-400 hover:text-white">
       {isPlaying ? (
         <button onClick={pauseMusic}>{<FaVolumeMute />}</button>
       ) : (
