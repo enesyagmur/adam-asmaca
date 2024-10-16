@@ -21,8 +21,6 @@ const Game = () => {
 
   const [guess, setGuess] = useState<string[]>(initialGuess);
 
-  console.log(splitedWord);
-
   const updateGuess = (char: string) => {
     const indexArray: number[] = splitedWord
       .map((x, index) => (x === char ? index : -1))
