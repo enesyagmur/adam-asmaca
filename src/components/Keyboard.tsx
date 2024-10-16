@@ -57,7 +57,7 @@ const Keyboard: React.FC<KeyboardProps> = ({
   };
 
   return errorCount === 5 ? null : (
-    <div className="w-[350px] md:w-[250px] lg:w-[400px] xl:w-[530px] h-[120px]  md:h-[500px] mt-2 flex justify-center items-center bg-white rounded-xl z-50">
+    <div className="w-[350px] md:w-[250px] lg:w-[400px] xl:w-[530px] h-[120px]  md:h-[500px] mt-2 flex justify-center items-center bg-white rounded-xl z-50 shadow-md shadow-black">
       <Letters
         letters={language === "en" ? engLetters : trLetters}
         charGuessFunc={charGuessFunc}

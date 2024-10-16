@@ -18,7 +18,7 @@ const Guess: React.FC<GuessProps> = ({
   const [helpCheck, setHelpCheck] = useState<boolean>(false);
 
   return (
-    <div className="w-[350px] md:w-[785px] lg:w-[935px] xl:w-[1190px] h-[50px] md:h-[100px] flex flex-col items-center  mt-8 bg-white rounded-xl relative">
+    <div className="w-[350px] md:w-[785px] lg:w-[935px] xl:w-[1190px] h-[50px] md:h-[100px] flex flex-col items-center  mt-8 bg-white rounded-xl relative shadow-md shadow-black">
       <div className="w-full h-[35px] md:h-[50px] flex items-center justify-center md:mt-4">
         {guess.map((char) => (
           <p className="guess-char" key={uuidv4()}>

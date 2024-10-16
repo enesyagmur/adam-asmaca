@@ -59,7 +59,7 @@ const Home = () => {
       style={backgroundStyle}
       className="w-full h-screen flex flex-col items-center justify-center  text-blue-400 "
     >
-      <div className="w-10/12 lg:w-6/12 h-5/6 lg:h-4/6 flex flex-col items-center justify-evenly relative bg-white text-black rounded-2xl">
+      <div className="w-10/12 lg:w-6/12 h-5/6 lg:h-4/6 flex flex-col items-center justify-evenly relative bg-white text-black rounded-2xl shadow-md shadow-black">
         <p className="w-full text-4xl md:text-6xl lg:mb-20 capitalize bg-white text-blue-400 font-bold text-center">
           {language === "en" ? text.title.en : text.title.tr}
         </p>

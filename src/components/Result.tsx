@@ -29,7 +29,7 @@ const Result = () => {
 
   if (result === true) {
     return (
-      <div className="w-10/12 sm:w-8/12 lg:w-6/12 h-4/6 sm:h-3/6 bg-white flex flex-col items-center justify-between text-black rounded-xl">
+      <div className="w-10/12 sm:w-8/12 lg:w-6/12 h-4/6 sm:h-3/6 bg-white flex flex-col items-center justify-between text-black rounded-xl shadow-md shadow-black">
         <div className="w-full h-2/6 bg-green-500 relative text-2xl md:text-4xl font-bold uppercase flex items-center justify-center rounded-t-xl">
           <p className="">
             {language === "en" ? text.titleWon.en : text.titleWon.tr}
@@ -53,7 +53,7 @@ const Result = () => {
     );
   } else if (result === false) {
     return (
-      <div className="w-10/12 sm:w-8/12 lg:w-6/12 h-4/6 sm:h-3/6 bg-white flex flex-col items-center justify-between text-black rounded-xl">
+      <div className="w-10/12 sm:w-8/12 lg:w-6/12 h-4/6 sm:h-3/6 bg-white flex flex-col items-center justify-between text-black rounded-xl shadow-md shadow-black">
         <div className="w-full h-2/6 bg-red-500 text-2xl md:text-4xl font-bold uppercase flex items-center justify-center rounded-t-xl relative">
           <p className="">
             {language === "en" ? text.titleLose.en : text.titleLose.tr}

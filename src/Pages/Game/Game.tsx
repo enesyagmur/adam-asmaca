@@ -59,7 +59,7 @@ const Game = () => {
     return (
       <div
         style={backgroundStyle}
-        className="w-full md:h-screen flex flex-col-reverse md:flex-col items-center  text-black lg:p-10 relative"
+        className="w-full h-screen flex flex-col-reverse md:flex-col items-center  text-black lg:p-10 relative pb-10 sm:pb-0"
       >
         <div className="w-full lg:w-12/12  xl:w-11/12  h-[655px] md:h-[500px] flex md:flex-row md:mt-10 lg:mt-0 flex-col-reverse items-center justify-evenly">
           <Keyboard
