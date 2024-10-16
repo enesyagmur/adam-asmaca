@@ -19,8 +19,6 @@ type KeyboardProps = {
 const Keyboard: React.FC<KeyboardProps> = ({
   guess,
   setGuess,
-  guessCounter,
-  setGuessCounter,
   splitedWord,
 }) => {
   const errorCount = useSelector((state: stateRoot) => state.errorStore.count);
@@ -51,17 +49,24 @@ const Keyboard: React.FC<KeyboardProps> = ({
   };
 
   const updateGuess = (char: string) => {
-    setGuess((prevGuess) => {
-      const newGuess = [...prevGuess];
-      newGuess[guessCounter] = char;
-      return newGuess;
-    });
-    setGuessCounter((prevCounter) => prevCounter + 1);
+    const indexArray: number[] = splitedWord
+      .map((x, index) => (x === char ? index : -1))
+      .filter((index) => index !== -1);
+
+    for (let i = 0; i < indexArray.length; i++) {
+      setGuess((prevGuess) => {
+        const newGuess = [...prevGuess];
+        newGuess[indexArray[i]] = char;
+        return newGuess;
+      });
+    }
   };
 
   const charGuessFunc = (char: string) => {
-    if (char === splitedWord[guessCounter]) {
-      updateGuess(char);
+    if (splitedWord.includes(char)) {
+      if (!guess.includes(char)) {
+        updateGuess(char);
+      }
     } else {
       handleError();
     }
