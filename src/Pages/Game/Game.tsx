@@ -14,7 +14,6 @@ const Game = () => {
     (state: stateRoot) => state.wordStore.splitedWord
   );
   const result = useSelector((state: stateRoot) => state.resultStore.result);
-  const [guessCounter, setGuessCounter] = useState<number>(0);
 
   const initialGuess = useMemo(() => {
     return Array(splitedWord.length).fill("");
@@ -24,13 +23,24 @@ const Game = () => {
 
   console.log(splitedWord);
 
+  const updateGuess = (char: string) => {
+    const indexArray: number[] = splitedWord
+      .map((x, index) => (x === char ? index : -1))
+      .filter((index) => index !== -1);
+
+    for (let i = 0; i < indexArray.length; i++) {
+      setGuess((prevGuess) => {
+        const newGuess = [...prevGuess];
+        newGuess[indexArray[i]] = char;
+        return newGuess;
+      });
+    }
+  };
+
   const revealNextLetter = () => {
-    setGuess((prevGuess) => {
-      const newGuess = [...prevGuess];
-      newGuess[guessCounter] = splitedWord[guessCounter];
-      return newGuess;
-    });
-    setGuessCounter((prevCounter) => prevCounter + 1);
+    const findNullIndex = guess.findIndex((x) => x === "");
+    const findChar = splitedWord[findNullIndex];
+    updateGuess(findChar);
   };
 
   useEffect(() => {
@@ -54,9 +64,7 @@ const Game = () => {
         <div className="w-full lg:w-12/12  xl:w-11/12  h-[655px] md:h-[500px] flex md:flex-row md:mt-10 lg:mt-0 flex-col-reverse items-center justify-evenly">
           <Keyboard
             guess={guess}
-            setGuess={setGuess}
-            guessCounter={guessCounter}
-            setGuessCounter={setGuessCounter}
+            updateGuess={updateGuess}
             splitedWord={splitedWord}
           />
           <Scene />

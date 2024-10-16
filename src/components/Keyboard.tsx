@@ -10,15 +10,13 @@ import Letters from "./Letters";
 
 type KeyboardProps = {
   guess: string[];
-  setGuess: React.Dispatch<React.SetStateAction<string[]>>;
-  guessCounter: number;
-  setGuessCounter: React.Dispatch<React.SetStateAction<number>>;
+  updateGuess: (char: string) => void;
   splitedWord: string[];
 };
 
 const Keyboard: React.FC<KeyboardProps> = ({
   guess,
-  setGuess,
+  updateGuess,
   splitedWord,
 }) => {
   const errorCount = useSelector((state: stateRoot) => state.errorStore.count);
@@ -46,20 +44,6 @@ const Keyboard: React.FC<KeyboardProps> = ({
 
   const handleError = () => {
     dispatch(updateError());
-  };
-
-  const updateGuess = (char: string) => {
-    const indexArray: number[] = splitedWord
-      .map((x, index) => (x === char ? index : -1))
-      .filter((index) => index !== -1);
-
-    for (let i = 0; i < indexArray.length; i++) {
-      setGuess((prevGuess) => {
-        const newGuess = [...prevGuess];
-        newGuess[indexArray[i]] = char;
-        return newGuess;
-      });
-    }
   };
 
   const charGuessFunc = (char: string) => {
