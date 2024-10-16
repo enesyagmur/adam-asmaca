@@ -1,20 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
 import { stateRoot } from "../Redux/store";
 import { AiFillHome } from "react-icons/ai";
-import { FaRepeat } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import { resetError } from "../Redux/errorSlice";
 import { updateResult } from "../Redux/resultSlice";
 import { FaFaceSmile } from "react-icons/fa6";
 import { FaFaceDizzy } from "react-icons/fa6";
-import { createNewRandomWord } from "../Redux/wordSlice";
 import text from "../data/languageText/textForResult.json";
 
-type ResultProps = {
-  setGuess: React.Dispatch<React.SetStateAction<string[]>>;
-};
-
-const Result: React.FC<ResultProps> = ({ setGuess }) => {
+const Result = () => {
   const result = useSelector((state: stateRoot) => state.resultStore.result);
   const splitedWord = useSelector(
     (state: stateRoot) => state.wordStore.splitedWord
@@ -32,22 +26,6 @@ const Result: React.FC<ResultProps> = ({ setGuess }) => {
     dispatch(updateResult(null));
   };
 
-  const restartGame = () => {
-    const difficultyMap = {
-      en: ["easy", "medium", "hard"],
-      tr: ["kolay", "orta", "zor"],
-    };
-
-    const length = splitedWord.length - 4;
-    const difficulty =
-      language === "en" ? difficultyMap.en[length] : difficultyMap.tr[length];
-    dispatch(createNewRandomWord(difficulty));
-    setGuess(Array(splitedWord.length));
-  };
-
-  dispatch(resetError());
-  dispatch(updateResult(null));
-
   if (result === true) {
     return (
       <div className="w-10/12 sm:w-8/12 lg:w-6/12 h-4/6 sm:h-3/6 bg-white flex flex-col items-center justify-between text-black rounded-xl">
@@ -64,10 +42,6 @@ const Result: React.FC<ResultProps> = ({ setGuess }) => {
           </p>
         </div>
         <div className="w-7/12 md:w-4/12 h-2/6 flex items-center justify-evenly  text-6xl">
-          <FaRepeat
-            className="cursor-pointer hover:text-neutral-400"
-            onClick={restartGame}
-          />
           <AiFillHome
             className="cursor-pointer hover:text-neutral-400"
             onClick={goHome}
@@ -91,10 +65,6 @@ const Result: React.FC<ResultProps> = ({ setGuess }) => {
           </p>
         </div>
         <div className="w-7/12 md:w-4/12 h-2/6 flex items-center justify-evenly  text-6xl">
-          <FaRepeat
-            className="cursor-pointer hover:text-neutral-400"
-            onClick={restartGame}
-          />
           <AiFillHome
             className="cursor-pointer hover:text-neutral-400"
             onClick={goHome}

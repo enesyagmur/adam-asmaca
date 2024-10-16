@@ -36,13 +36,15 @@ const Keyboard: React.FC<KeyboardProps> = ({
         dispatch(updateResult(true));
       }
     }
-  }, [guess, dispatch, splitedWord]);
+  }, [guess]);
 
   useEffect(() => {
     if (errorCount === 5) {
-      dispatch(updateResult(false));
+      setTimeout(() => {
+        dispatch(updateResult(false));
+      }, 2500);
     }
-  }, [errorCount, dispatch]);
+  }, [errorCount]);
 
   const handleError = () => {
     dispatch(updateError());
@@ -65,7 +67,7 @@ const Keyboard: React.FC<KeyboardProps> = ({
     }
   };
 
-  return (
+  return errorCount === 5 ? null : (
     <div className="w-[350px] md:w-[250px] lg:w-[400px] xl:w-[530px] h-[120px]  md:h-[500px] mt-2 flex justify-center items-center bg-white rounded-xl z-50">
       <Letters
         letters={language === "en" ? engLetters : trLetters}

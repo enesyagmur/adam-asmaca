@@ -12,9 +12,9 @@ const Hangman = () => {
     <div className="w-[200px] md:w-[200px] h-[300px] relative rounded-xl  text-blue-400 md:right-[47px] md:bottom-[25px] ">
       {errorCount > 0 ? <Head /> : null}
       {errorCount > 1 ? <Ring /> : null}
-      {errorCount > 1 ? <Center /> : null}
-      {errorCount > 1 ? <Arm /> : null}
-      {errorCount > 1 ? <Leg /> : null}
+      {errorCount > 2 ? <Center /> : null}
+      {errorCount > 3 ? <Arm /> : null}
+      {errorCount > 4 ? <Leg /> : null}
     </div>
   );
 };

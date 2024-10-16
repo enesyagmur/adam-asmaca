@@ -74,7 +74,7 @@ const Game = () => {
         style={backgroundStyle}
         className="w-full h-screen flex items-center justify-center"
       >
-        <Result setGuess={setGuess} />
+        <Result />
       </div>
     );
   }
