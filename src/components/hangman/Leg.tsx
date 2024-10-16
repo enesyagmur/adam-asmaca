@@ -1,8 +1,8 @@
 const Leg = () => {
   return (
-    <div className="w-[235px] h-[110px] flex items-start justify-end absolute top-[170px] left-[50%]">
-      <div className="w-[10px] h-[110px] bg-neutral-300 transform rotate-45 mr-16"></div>
-      <div className="w-[10px] h-[110px] bg-neutral-300 transform rotate-[-45deg]"></div>
+    <div className="w-[60px] h-[80px] flex items-center justify-between absolute top-[170px] left-[57px] md:top-[190px] md:left-[70px]">
+      <div className="w-[20px] h-full bg-blue-400 rounded-b-lg"></div>
+      <div className="w-[20px] h-full bg-blue-400  rounded-b-lg"></div>
     </div>
   );
 };

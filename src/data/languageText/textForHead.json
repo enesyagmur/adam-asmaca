@@ -1,0 +1,22 @@
+{
+  "error1": {
+    "en": "I see, we have made our first mistake.",
+    "tr": "İlk hatamızı yaptığımızı görüyorum."
+  },
+  "error2": {
+    "en": "Okay, everyone deserves 3 chances.",
+    "tr": "Tamam, herkesin 3. bir hakkı vardır."
+  },
+  "error3": {
+    "en": "I am starting to worry.",
+    "tr": "Endişelenmeye başlıyorum."
+  },
+  "error4": {
+    "en": "Please, I dont want to die!",
+    "tr": "Lütfen, ölmek istemiyorum!"
+  },
+  "error5": {
+    "en": "Here, ignorance kills...",
+    "tr": "İşte, cahillik öldürür..."
+  }
+}

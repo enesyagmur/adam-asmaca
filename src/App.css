@@ -3,13 +3,32 @@
 @tailwind utilities;
 
 .guess-char {
-  @apply w-[60px] m-3 text-5xl font-bold bg-transparent text-neutral-300 text-center capitalize;
+  @apply w-[60px] m-3 text-2xl md:text-5xl font-bold bg-transparent text-blue-400 text-center capitalize;
 }
 
 .guess-line {
-  @apply w-[60px] h-[10px] bg-neutral-300 m-3;
+  @apply w-[60px] h-[5px] bg-neutral-400 m-3;
 }
 
 .keyboard-button {
-  @apply w-[60px] h-[70px] font-bold bg-transparent border-2 text-neutral-300 border-neutral-300 text-center m-1 hover:bg-neutral-300 hover:text-neutral-800;
+  @apply w-[25px]  md:w-[30px] lg:w-[40px] xl:w-[50px] h-[30px]  md:h-[40px] lg:h-[50px] xl:h-[60px] font-bold capitalize bg-transparent border-[1px] md:border-2 text-blue-400 border-neutral-200 md:border-neutral-300 rounded-md text-center m-1 hover:bg-blue-400 hover:text-white;
+}
+
+.home-mode-button {
+  @apply w-10/12 md:w-3/12 h-1/5 md:h-full flex flex-col items-center justify-center border-2 border-blue-400  rounded-xl hover:bg-blue-400 hover:text-white cursor-pointer;
+}
+
+.hangman-message-cloud {
+  @apply w-24 h-20 md:w-28 md:h-24 border-2 border-neutral-400 rounded-xl absolute mb-20 right-[130px] md:right-0 md:left-[150px] px-2;
+}
+.hangman-message-text {
+  @apply text-neutral-600 w-full h-full flex items-center justify-center text-center text-sm md:text-[16px];
+}
+
+.head-icon {
+  @apply text-6xl absolute top-[15px] md:top-[40px] left-[55px] md:left-[70px] z-50;
+}
+
+.result-player {
+  @apply w-[33px] h-[33px] md:w-[40px] md:h-[40px] text-sm absolute right-4 md:top-10 md:right-10 z-50 flex items-center justify-center  cursor-pointer rounded-full border-2;
 }
