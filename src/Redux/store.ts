@@ -3,6 +3,7 @@ import wordSlice from "./wordSlice";
 import errorSlice from "./errorSlice";
 import resultSlice from "./resultSlice";
 import languageSlice from "./languageSlice";
+import musicSlice from "./musicSlice";
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
     errorStore: errorSlice,
     resultStore: resultSlice,
     languageStore: languageSlice,
+    musicSlice: musicSlice,
   },
 });
 

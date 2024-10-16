@@ -21,5 +21,4 @@ function App() {
 export default App;
 
 //YAPILACAKLAR:
-//result görüntülenmesinde ve restart işleminde hata var
 // proje live alma video çekme ve linkedin post

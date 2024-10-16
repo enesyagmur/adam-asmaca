@@ -7,6 +7,7 @@ import { updateResult } from "../Redux/resultSlice";
 import { FaFaceSmile } from "react-icons/fa6";
 import { FaFaceDizzy } from "react-icons/fa6";
 import text from "../data/languageText/textForResult.json";
+import Player from "./Player";
 
 const Result = () => {
   const result = useSelector((state: stateRoot) => state.resultStore.result);
@@ -29,11 +30,12 @@ const Result = () => {
   if (result === true) {
     return (
       <div className="w-10/12 sm:w-8/12 lg:w-6/12 h-4/6 sm:h-3/6 bg-white flex flex-col items-center justify-between text-black rounded-xl">
-        <div className="w-full h-2/6 bg-green-500 relative text-4xl font-bold uppercase flex items-center justify-center rounded-t-xl">
+        <div className="w-full h-2/6 bg-green-500 relative text-2xl md:text-4xl font-bold uppercase flex items-center justify-center rounded-t-xl">
           <p className="">
             {language === "en" ? text.titleWon.en : text.titleWon.tr}
           </p>
-          <FaFaceSmile className="absolute left-[90%]" />
+          <FaFaceSmile className="absolute right-[85%] md:right-[90%]" />
+          <Player type={"win"} />
         </div>
         <div className="w-full h-2/6 flex items-center justify-center pt-6">
           <p> {language === "en" ? text.wordInfo.en : text.wordInfo.tr}|</p>
@@ -52,11 +54,13 @@ const Result = () => {
   } else if (result === false) {
     return (
       <div className="w-10/12 sm:w-8/12 lg:w-6/12 h-4/6 sm:h-3/6 bg-white flex flex-col items-center justify-between text-black rounded-xl">
-        <div className="w-full h-2/6 bg-red-500 text-4xl font-bold uppercase flex items-center justify-center rounded-t-xl relative">
+        <div className="w-full h-2/6 bg-red-500 text-2xl md:text-4xl font-bold uppercase flex items-center justify-center rounded-t-xl relative">
           <p className="">
             {language === "en" ? text.titleLose.en : text.titleLose.tr}
           </p>
-          <FaFaceDizzy className="absolute left-[90%]" />
+          <Player type={"lose"} />
+
+          <FaFaceDizzy className="absolute right-[85%] md:right-[90%" />
         </div>
         <div className="w-full h-2/6 flex items-center justify-center pt-6">
           <p>{language === "en" ? text.wordInfo.en : text.wordInfo.tr} |</p>
