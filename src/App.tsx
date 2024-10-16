@@ -19,6 +19,3 @@ function App() {
 }
 
 export default App;
-
-//YAPILACAKLAR:
-// proje live alma video çekme ve linkedin post
