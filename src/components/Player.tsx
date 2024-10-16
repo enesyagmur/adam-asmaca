@@ -48,7 +48,7 @@ const Player: React.FC<PlayerProps> = ({ type }) => {
           {isPlaying ? <FaVolumeMute /> : <FaVolumeHigh />}
         </button>
 
-        <audio ref={audioRef} src={winGame} autoPlay loop />
+        <audio ref={audioRef} src={winGame} autoPlay />
       </div>
     );
   } else if (type === "lose") {
@@ -58,7 +58,7 @@ const Player: React.FC<PlayerProps> = ({ type }) => {
           {isPlaying ? <FaVolumeMute /> : <FaVolumeHigh />}
         </button>
 
-        <audio ref={audioRef} src={loseGame} autoPlay loop />
+        <audio ref={audioRef} src={loseGame} autoPlay />
       </div>
     );
   }
