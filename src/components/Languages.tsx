@@ -11,7 +11,7 @@ const Languages = () => {
   const dispatch = useDispatch();
   return (
     <div className="w-[40px] h-[50px] flex items-center justify-between absolute right-2 top-0">
-      {language === "en" ? (
+      {language === "tr" ? (
         <img
           src={turkeyFlag}
           alt="flag"
