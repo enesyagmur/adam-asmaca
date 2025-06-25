@@ -1,50 +1,42 @@
-# React + TypeScript + Vite
+# 🪧 PolyTranslate
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**PolyTranslate**, dört farklı dil arasında çeviri yapmanıza olanak tanıyan sade ve kullanışlı bir çeviri uygulamasıdır. Tailwind CSS ile tasarlandı, React ile geliştirildi ve MyMemory API kullanılarak entegre edildi.
 
-Currently, two official plugins are available:
+🔗 [Live Demo](https://lnkd.in/d8xkEM87)  
+🔗 [GitHub Repo](https://lnkd.in/dkxJvDf9)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🎥 Önizleme
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+> 📌 *Aşağıya uygulamanızın kullanımına dair bir GIF yerleştirin:*
+  
+![PolyTranslate Preview](./public/preview.gif)
 
-- Configure the top-level `parserOptions` property like this:
+---
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 🔎 Özellikler
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- 🌐 **Dört farklı dil arasında çeviri**
+- 📱 **Responsive tasarım**
+- ✨ Başlıkta **özel animasyonlar**
+- 🔁 Seçilen dillerin **tek tıkla ters çevrilmesi**
+- 📋 Çeviri sonucunu **kopyalama**
+- 🧹 Giriş alanını **temizleme butonu**
+- 🎨 **Tailwind ile özel renk ve animasyon kullanımı**
+- ⚠️ **Hata yakalama ve limit aşımı için özel hata bileşeni**
+- ⚡ **Verimlilik için** `useCallback`, `useMemo`, `lodash.debounce` kullanımı
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+---
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## 🧰 Kullanılan Teknolojiler
+
+| Teknoloji        | Açıklama                           |
+|------------------|------------------------------------|
+| ⚛️ **React**         | Bileşen tabanlı UI geliştirme      |
+| 🎨 **Tailwind CSS**   | Modern ve özelleştirilebilir stil |
+| 🌍 **MyMemory API**   | Ücretsiz çeviri hizmeti           |
+| 📡 **Axios**          | HTTP istekleri                    |
+| ⌛ **Lodash Debounce**| Gecikmeli API çağrısı             |
+| 🧠 **React Hooks**    | Fonksiyonel bileşen mantığı       |
+| 💎 **React Icons**    | Estetik ikon bileşenleri          |
