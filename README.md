@@ -8,9 +8,8 @@
 
 ## 🎥 Önizleme
 
-> 📌 *Aşağıya uygulamanızın kullanımına dair bir GIF yerleştirin:*
-  
-![PolyTranslate Preview](./public/preview.gif)
+>  ![poly-translate-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/99d01809-ed9d-4a51-8823-4a3734a0f5b4)
+
 
 ---
 
