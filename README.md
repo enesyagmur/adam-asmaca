@@ -3,7 +3,6 @@
 **PolyTranslate**, dört farklı dil arasında çeviri yapmanıza olanak tanıyan sade ve kullanışlı bir çeviri uygulamasıdır. Tailwind CSS ile tasarlandı, React ile geliştirildi ve MyMemory API kullanılarak entegre edildi.
 
 🔗 [Live Demo](https://lnkd.in/d8xkEM87)  
-🔗 [GitHub Repo](https://lnkd.in/dkxJvDf9)
 
 ---
 
